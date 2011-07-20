@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+<HEAD>
+<TITLE>A.I.D. - Album Information Database</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#000000" TEXT="#c0c0c0" LINK="#FFFFFF" VLINK="#c0c0c0" ALINK="#00FFFF"><FONT FACE="Verdana" SIZE=3><?php_track_vars?>Here is the information you entered for <?php echo "$artistalbum"; ?>:<P><TABLE  width="40%" border="0" cellspacing="1" cellpadding="1" bgcolor="#808080">
+<TR><TH>Track Name</TH><TH>Track Length</TH><TH>Track BPM</TH></TR>
+<?php
+	for ($i = 0; $i <$numoftracks; $i++) {
+		echo "
+		<TR><TD>$trackname[$i]</TD><TD>$tracklength[$i]</TD><TD>$trackbpm[$i]</TD>
+</TR>";
+?>
+<FORM method="POST" action="confirmed.phtml">
+<INPUT TYPE="submit" value="Confirm Submission">
+</FORM>
+</BODY>
+
+</HTML>

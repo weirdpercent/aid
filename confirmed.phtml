@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+<HEAD>
+<TITLE>A.I.D. - Album Information Database</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#000000" TEXT="#c0c0c0" LINK="#FFFFFF" VLINK="#c0c0c0" ALINK="#00FFFF"><FONT FACE="Verdana" SIZE=3><?php_track_vars?>Adding <?php echo "$artistalbum"; ?> to database, please wait...<P>
+<?php
+	$sql = "CREATE TABLE $artistalbum (";
+	for ($i = 0; $i <$numoftracks; $i++) {
+		$sql .= "$trackname[$i] varchar (50),$tracklength[$i] varchar (5),$trackbpm[$i] varchar (6),";
+}
+$sql = substr($sql, 0, -1);
+$sql .= ")";
+
+$connection = mysql_connect("moby","aid","UC7Mf8eS") or die ("Couldn't connect to server!");
+
+$db = mysql_select_db("aid", $connection) or die ("Couldn't select database!");
+
+$sql_result = mysql_query($sql,$connection) or die ("Couldn't execute query!");
+
+	if (!$sql_result) {
+		echo "<P>Couldn't create table!";
+	} else {
+		echo "<P>$artistalbum has been added!";
+}
+?>
+
+</BODY>
+
+</HTML>
