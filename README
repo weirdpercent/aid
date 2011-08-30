@@ -16,13 +16,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 "add.pl"
 
-This program adds CD info into a simple database. It is essentially a
-script to mimic the CDDB (CD Database), with one major difference:
-BPMs. The script reads in the CD title, track titles, track lengths,
-and track BPM (beats per minute). Then it writes this information to a
-flat file in the directory that the script occupies.
+This program adds CD info into a simple database. It is essentially a script to mimic the CDDB (CD Database), with one major difference: BPMs. The script reads in the CD title, track titles, track lengths, and track BPM (beats per minute). Then it writes this information to a flat file in the directory that the script occupies.
 
 "bpm.pl"
 
-This program searches all the files in the database for songs with the
-same BPM.
+This program searches all the files in the database for songs with the same BPM.
+
+The webiface folder contains four HTML files that consist of a web interface for the database. Instead of Perl, PHP is used to collect and add info to the db. It is largely unfinished and untested; for instance, no search feature has been implemented yet. It was written to work with sourceforge.net's database, but should adapt to any database with minimal modifications.
+
+I have no plans to work on AID or the web interface in the near future, so if you want to contribute to it's development I invite you to jump in. I realize that ID3v2 has BPM support, so in some ways this program is obsolete, but that's not to say it's not useful for learning. I heavily commented the Perl code to help me learn Perl, so others may benefit from this.
